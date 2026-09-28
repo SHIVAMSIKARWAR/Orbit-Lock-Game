@@ -1,0 +1,12 @@
+{
+  "name": "orbit-lock",
+  "version": "1.0.0",
+  "private": true,
+  "description": "A dependency-free real-time two-player Connect Four game.",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

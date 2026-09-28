@@ -1,0 +1,10 @@
+{
+  "dependencies": {
+    "nport": "^2.1.6"
+  },
+  "_npx": {
+    "packages": [
+      "nport"
+    ]
+  }
+}

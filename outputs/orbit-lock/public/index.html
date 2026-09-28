@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#10162d" />
+    <title>Orbit Lock — Multiplayer Connect Four</title>
+    <link rel="stylesheet" href="/style.css" />
+  </head>
+  <body>
+    <main class="shell">
+      <section class="hero" aria-labelledby="game-title">
+        <div class="brand-mark" aria-hidden="true">✦</div>
+        <div>
+          <p class="eyebrow">TWO-PILOT SIGNAL GAME</p>
+          <h1 id="game-title">Orbit Lock</h1>
+          <p class="tagline">Claim a line across the starfield before your rival does.</p>
+        </div>
+      </section>
+
+      <section class="lobby panel" id="lobby">
+        <div>
+          <p class="eyebrow">LAUNCH A MATCH</p>
+          <h2>Bring another pilot aboard</h2>
+          <p class="instructions">Choose a display name. Create a room, then send its code or link to one friend. Red moves first; the first pilot to connect four beacons wins.</p>
+        </div>
+        <form id="join-form">
+          <label>Display name <input id="name" maxlength="18" autocomplete="nickname" placeholder="Nova" required /></label>
+          <label>Room code <input id="room-code" maxlength="5" autocapitalize="characters" autocomplete="off" placeholder="Create a new room" /></label>
+          <button class="primary" type="submit">Enter the starfield <span aria-hidden="true">→</span></button>
+          <p class="form-note">Leave room code empty to create a private room.</p>
+        </form>
+      </section>
+
+      <section class="game hidden" id="game" aria-live="polite">
+        <div class="match-bar panel">
+          <div class="room-label"><span class="eyebrow">ROOM</span><strong id="room-name">—</strong></div>
+          <button class="share-button" id="share" type="button">Copy invite link</button>
+          <div class="connection" id="connection"><span class="signal"></span> Connecting</div>
+        </div>
+
+        <div class="scoreboard">
+          <article class="pilot-card red-card" id="red-card"><span class="orb red-orb"></span><div><span class="eyebrow">RED PILOT</span><strong id="red-name">Waiting…</strong></div></article>
+          <div class="versus">VS</div>
+          <article class="pilot-card gold-card" id="gold-card"><span class="orb gold-orb"></span><div><span class="eyebrow">GOLD PILOT</span><strong id="gold-name">Waiting…</strong></div></article>
+        </div>
+
+        <section class="board-panel panel">
+          <div class="status-row"><p id="status">Opening a secure channel…</p><button class="rematch hidden" id="rematch" type="button">New round</button></div>
+          <div class="board" id="board" role="grid" aria-label="Orbit Lock game board"></div>
+          <p class="rule"><span>How to win</span> Drop one beacon each turn. Make a row of four horizontally, vertically, or diagonally.</p>
+        </section>
+      </section>
+    </main>
+    <div class="toast" id="toast" role="status"></div>
+    <script src="/app.js"></script>
+  </body>
+</html>
